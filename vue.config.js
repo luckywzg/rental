@@ -1,3 +1,14 @@
 module.exports = {
-  transpileDependencies: true
-}
+  transpileDependencies: true,
+  configureWebpack: {
+    resolve: {
+      alias: {
+        assets: "@/assets",
+        common: "@/common",
+        network: "@/network",
+        components: "@/components",
+        views: "@/views",
+      },
+    },
+  },
+};
