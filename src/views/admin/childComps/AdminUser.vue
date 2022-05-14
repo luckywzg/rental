@@ -58,8 +58,8 @@ export default {
       .then((res) => {
         this.tableData = res.data;
       })
-      .catch(() => {
-        console.log("获取所有用户数据失败");
+      .catch((err) => {
+        console.log("获取所有用户数据失败", err);
       });
   },
   methods: {

@@ -7,7 +7,6 @@ Vue.use(VueRouter);
 const Home = () => import("views/home/Home");
 const Login = () => import("views/login/Login");
 const Register = () => import("views/register/Register");
-const Business = () => import("views/business/Business");
 
 const UserLogin = () => import("views/user/childComps/UserLogin");
 const UserHouseInfo = () => import("views/user/childComps/UserHouseInfo");
@@ -38,10 +37,6 @@ const routes = [
   {
     path: "/home",
     component: Home,
-  },
-  {
-    path: "/business",
-    component: Business,
   },
   {
     path: "/login",

@@ -12,7 +12,7 @@
         :rules="rules"
         ref="ruleForm"
       >
-      <!-- 房源描述 -->
+        <!-- 房源描述 -->
         <el-form-item
           label-width="120px"
           label="房源描述："
@@ -438,7 +438,7 @@ export default {
               }
             })
             .catch((err) => {
-              console.log(err);
+              console.log("添加失败！！", err);
             });
         } else {
           this.$message.error("请填正确且完整的房源信息！");
@@ -493,7 +493,6 @@ export default {
 .profile {
   position: absolute;
   width: 1000px;
-  /* height: 730px; */
   top: 0;
   left: 5%;
   text-align: center;

@@ -58,8 +58,8 @@ export default {
       .then((res) => {
         this.tableData = res.data;
       })
-      .catch(() => {
-        console.log('获取所有商家信息失败');
+      .catch((err) => {
+        console.log("获取所有商家信息失败", err);
       });
   },
   methods: {
@@ -82,7 +82,7 @@ export default {
               }
             })
             .catch((err) => {
-              console.log('移除商家失败！');
+              console.log("移除商家失败！", err);
             });
         })
         .catch(() => {

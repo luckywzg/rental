@@ -312,7 +312,7 @@ export default {
           this.$bus.$emit("areaChange", res.data);
         })
         .catch((err) => {
-          console.log("区域请求数据失败");
+          console.log("区域请求数据失败", err);
         });
     },
     // 当点击 学校 时，请求符合默认筛选条件的数据
@@ -322,7 +322,7 @@ export default {
           this.$bus.$emit("areaChange", res.data);
         })
         .catch((err) => {
-          console.log("学校请求数据失败");
+          console.log("学校请求数据失败", err);
         });
     },
     // 当点击 地铁 时，请求符合默认筛选条件的数据
@@ -332,7 +332,7 @@ export default {
           this.$bus.$emit("areaChange", res.data);
         })
         .catch((err) => {
-          console.log("地铁请求数据失败");
+          console.log("地铁请求数据失败", err);
         });
     },
     // 监听 区域 学校 地铁 点击
@@ -365,7 +365,7 @@ export default {
           this.subAxios();
           break;
         default:
-          console.log("err");
+          console.log("错误！");
       }
     },
     // 重置所有index为0
@@ -441,7 +441,6 @@ export default {
         this.areaAll.priceLow = priceL;
         this.areaAll.priceHigh = priceH;
         this.areaAxios();
-        // console.log(this.areaAll.priceLow, this.areaAll.priceHigh);
       }
       if (this.subway) {
         this.subAll.priceLow = priceL;

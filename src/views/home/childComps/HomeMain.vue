@@ -44,36 +44,38 @@
     <div class="main" v-else>
       <!-- 房源信息展示 -->
       <el-row v-for="(item, index) in detailList" :key="index">
-        <!-- 图片 -->
-        <el-col :span="5" class="main-left">
-          <img @click="detailClick(item)" :src="item.img_src" alt="房源图" />
-        </el-col>
-        <!-- 信息 -->
-        <el-col :span="19" class="main-center">
-          <!-- 房源描述 -->
-          <h2 @click="detailClick(item)">{{ item.description }}</h2>
-          <!-- 房源价格 -->
-          <div class="price">
-            <h3>{{ item.price }}</h3>
-            <span>元/月</span>
-          </div>
-          <div>
-            <!-- 居室 -->
-            <span>{{ item.type_ }}</span>
-            <!-- 建筑面积 -->
-            <span>{{ item.build_area }}m²</span>
-          </div>
-          <div>
-            <!-- 朝向 -->
-            <span>{{ item.orientation }}</span>
-            <!-- 户型 -->
-            <span>{{ item.house_standard }}</span>
-          </div>
-          <div>
-            <!-- 房源来自 -->
-            <p>{{ item.resource_from }}</p>
-          </div>
-        </el-col>
+        <el-card shadow="always">
+          <!-- 图片 -->
+          <el-col :span="5" class="main-left">
+            <img @click="detailClick(item)" :src="item.img_src" alt="房源图" />
+          </el-col>
+          <!-- 信息 -->
+          <el-col :span="19" class="main-center">
+            <!-- 房源描述 -->
+            <h2 @click="detailClick(item)">{{ item.description }}</h2>
+            <!-- 房源价格 -->
+            <div class="price">
+              <h3>{{ item.price }}</h3>
+              <span>元/月</span>
+            </div>
+            <div>
+              <!-- 居室 -->
+              <span>{{ item.type_ }}</span>
+              <!-- 建筑面积 -->
+              <span>{{ item.build_area }}m²</span>
+            </div>
+            <div>
+              <!-- 朝向 -->
+              <span>{{ item.orientation }}</span>
+              <!-- 户型 -->
+              <span>{{ item.house_standard }}</span>
+            </div>
+            <div>
+              <!-- 房源来自 -->
+              <p>{{ item.resource_from }}</p>
+            </div>
+          </el-col>
+        </el-card>
       </el-row>
     </div>
     <!-- 点击房源图片或者房源描述弹出框 -->
@@ -237,8 +239,8 @@ export default {
           console.log("图片请求数据成功");
           this.imgList = res.data;
         })
-        .catch(() => {
-          console.log("图片请求数据失败");
+        .catch((err) => {
+          console.log("图片请求数据失败", err);
         });
     },
     // 详情弹窗右上角关闭
@@ -298,8 +300,8 @@ export default {
                 });
               }
             })
-            .catch(() => {
-              console.log("取消收藏失败");
+            .catch((err) => {
+              console.log("取消收藏失败", err);
             });
         });
     },
@@ -360,9 +362,9 @@ export default {
   width: 1200px;
 }
 .main-ul {
-  /* margin-top: 30px; */
   padding-top: 30px;
   border-bottom: 2px solid #ff5777;
+  margin-bottom: 20px;
 }
 .main-ul li {
   float: left;
@@ -376,9 +378,11 @@ export default {
 }
 .main .el-row {
   height: 180px;
+  margin-bottom: 20px;
 }
 .main .el-row:hover {
   background-color: #fff;
+  box-shadow: 0 0 4px 4px pink;
 }
 .main-left img {
   width: 160px;

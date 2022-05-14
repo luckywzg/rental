@@ -211,27 +211,16 @@ export default {
           userType = 2;
         }
         if (valid) {
-          // this.axios
-          //   .post("/api/register", {
-          //     username: this.ruleForm.username,
-          //     password: this.ruleForm.pass,
-          //     age: this.ruleForm.age,
-          //     gender: this.ruleForm.sex,
-          //     telephone: this.ruleForm.phone,
-          //     address: this.ruleForm.address,
-          //     role: userType,
-          //   })
           register(this.ruleForm, userType)
             .then((res) => {
-              console.log(res);
               if (res.data == "注册成功!") {
                 this.$router.push("/login");
               } else {
                 this.$message.error(res.data);
               }
             })
-            .catch(() => {
-              console.log("注册失败");
+            .catch((err) => {
+              console.log("注册失败", err);
             });
         } else {
           this.$message.error("请填写正确且完整的个人信息！");

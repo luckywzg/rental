@@ -61,7 +61,5 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #f7f7f7;
-  /* background: url(assets/img/homebgc.jpg) no-repeat; */
-  /* background-attachment: fixed; */
 }
 </style>

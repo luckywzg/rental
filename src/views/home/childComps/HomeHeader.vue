@@ -42,21 +42,8 @@ export default {
           this.$bus.$emit("areaChange", res.data);
         })
         .catch((err) => {
-          console.log("请求数据失败");
+          console.log("请求数据失败", err);
         });
-
-      // this.axios
-      //   .post("/api/gethouses", {
-      //     search: this.input,
-      //   })
-      //   .then((res) => {
-      //     console.log(res);
-      //     // 请求成功之后发射事件，HomeMain中监听并接收
-      //     this.$bus.$emit("areaChange", res.data);
-      //   })
-      //   .catch((err) => {
-      //     console.log("请求数据失败");
-      //   });
     },
   },
 };
@@ -76,12 +63,12 @@ export default {
 }
 .el-input /deep/ .el-input__inner {
   height: 48px;
-  border-radius: 0%;
+  border-radius: 6px 0 0 6px;
   border: 2px solid var(--color-high-text);
 }
 .el-button {
   height: 48px;
-  border-radius: 0%;
+  border-radius: 0 6px 6px 0;
   font-size: 16px;
   border-color: var(--color-high-text);
   background-color: var(--color-high-text);

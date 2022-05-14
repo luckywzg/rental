@@ -108,8 +108,8 @@ export default {
                 this.$message.error(res.data.error);
               }
             })
-            .catch(() => {
-              console.log("登录失败！");
+            .catch((err) => {
+              console.log("登录失败！", err);
             });
         } else {
           this.$message.error("请填写正确且完整的登录信息！");

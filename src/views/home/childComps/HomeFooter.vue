@@ -61,7 +61,6 @@ export default {
 .footer-content {
   padding-bottom: 100px;
   text-align: center;
-  /* background-color: aqua; */
 }
 .footer-ul li {
   float: left;

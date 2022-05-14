@@ -165,14 +165,6 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           // 更新个人资料
-          // this.axios
-          //   .post("/api/updateUserInfo", {
-          //     username: this.ruleForm.username,
-          //     age: this.ruleForm.age,
-          //     gender: this.ruleForm.sex,
-          //     telephone: this.ruleForm.phone,
-          //     address: this.ruleForm.address,
-          //   })
           postUpdateUserInfo(this.ruleForm)
             .then((res) => {
               if (res.data.success !== undefined) {
@@ -187,11 +179,11 @@ export default {
                 });
               }
             })
-            .catch(() => {
-              console.log('修改失败');
+            .catch((err) => {
+              console.log("修改失败", err);
             });
         } else {
-          this.$message.error('请先正确且完整的个人资料！')
+          this.$message.error("请先正确且完整的个人资料！");
           return false;
         }
       });

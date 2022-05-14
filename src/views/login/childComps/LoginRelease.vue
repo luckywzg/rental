@@ -182,8 +182,8 @@ export default {
       .then((res) => {
         this.tableData = res.data;
       })
-      .catch(() => {
-        console.log("获取我的发布数据失败");
+      .catch((err) => {
+        console.log("获取我的发布数据失败", err);
       });
   },
   methods: {
@@ -213,7 +213,7 @@ export default {
               }
             })
             .catch((err) => {
-              console.log('移除失败!');
+              console.log("移除失败!", err);
             });
         })
         .catch(() => {

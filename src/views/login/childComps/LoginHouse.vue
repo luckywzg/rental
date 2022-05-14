@@ -91,8 +91,8 @@ export default {
       .then((res) => {
         this.tableData = res.data;
       })
-      .catch(() => {
-        console.log("获取房源状态失败");
+      .catch((err) => {
+        console.log("获取房源状态失败", err);
       });
   },
 };
